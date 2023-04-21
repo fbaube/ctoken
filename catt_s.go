@@ -37,3 +37,13 @@ func (A CAtt) Info() string {
 func (A CAtt) Debug() string {
 	return A.Info()
 }
+func (x1 CAtts) AsStdLibXml() []xml.Attr {
+	var x2 []CAtt
+	var x3 []xml.Attr
+	x2 = x1
+	// x3 = []xml.Attr(x2)
+	for _, A := range x2 {
+		x3 = append(x3, xml.Attr(A))
+	}
+	return x3
+}

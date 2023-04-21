@@ -1,6 +1,6 @@
 package ctoken
 
-// import "encoding/xml"
+import "encoding/xml"
 
 // GetFirstCTokenByTag checks a start-element's tag's local
 // name only, not any namespace. If no match, it returns nil.
@@ -45,8 +45,6 @@ func GetAllCTokensByTag(tkzn []CToken, s string) []CToken {
 	return ret
 }
 
-/* OBS ?
-
 // GetAttVal returns the attribute's string value, or "" if not found.
 func GetAttVal(se xml.StartElement, att string) string {
 	for _, A := range se.Attr {
@@ -57,8 +55,8 @@ func GetAttVal(se xml.StartElement, att string) string {
 	return ""
 }
 
-// GetXAttVal returns the attribute's string value, or "" if not found.
-func (ct CToken) GetXAttVal(att string) string {
+// GetCAttVal returns the attribute's string value, or "" if not found.
+func (ct CToken) GetCAttVal(att string) string {
 	for _, A := range ct.CAtts {
 		if A.Name.Local == att {
 			return A.Value
@@ -66,5 +64,3 @@ func (ct CToken) GetXAttVal(att string) string {
 	}
 	return ""
 }
-
-*/

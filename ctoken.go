@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	SU "github.com/fbaube/stringutils"
-	XU "github.com/fbaube/xmlutils"
+	// XU "github.com/fbaube/xmlutils"
 	S "strings"
 )
 
@@ -140,11 +140,11 @@ func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 
 		// TODO: Is this the place check for any of the other
 		// "standard" XML namespaces that we might encounter ?
-		if ctkn.CName.Space == XU.NS_XML {
+		if ctkn.CName.Space == NS_XML {
 			ctkn.CName.Space = "xml:"
 		}
 		for _, xA := range xSE.Attr {
-			if xA.Name.Space == XU.NS_XML {
+			if xA.Name.Space == NS_XML {
 				// println("TODO check name.local:
 				// newgtoken xml:" + A.Name.Local)
 				xA.Name.Space = "xml:"
@@ -163,7 +163,7 @@ func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 		// ctkn.Strings = []string{xEE.Name.Local}
 		ctkn.Text = xEE.Name.Local
 		ctkn.CName = CName(xEE.Name)
-		if ctkn.CName.Space == XU.NS_XML {
+		if ctkn.CName.Space == NS_XML {
 			ctkn.CName.Space = "xml:"
 		}
 		// fmt.Printf("<!--End-Tagnt--> %s \n", outGT.Echo())
