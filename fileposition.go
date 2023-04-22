@@ -1,6 +1,7 @@
 package ctoken
 
 import (
+	"encoding/xml"
 	"fmt"
 	_ "github.com/fbaube/stringutils"
 )
@@ -40,4 +41,58 @@ func (fp FilePosition) Echo() string {
 func (fp FilePosition) Debug() string {
 	return fmt.Sprintf("fileposn:ch%d,L%02d.c%02d",
 		fp.Pos, fp.Lnr, fp.Col)
+}
+
+type FileRange struct {
+	Beg FilePosition
+	End FilePosition
+}
+
+// === SPAN ===
+
+// Span specifies the range of a subset of a string (that is not included in the struct).
+//
+// Span implements interface [stringutils.Stringser].
+//
+// FIXME:  Make this a ptr to a ContentityNode
+// .
+type Span struct {
+	TagName string
+	Atts    []xml.Attr
+	// SliceBounds
+	FileRange
+}
+
+func (sp Span) GetSpanOfString(s string) string {
+	if len(s) == 0 {
+		panic("Zero-len Raw")
+	}
+	if sp.End.Pos == 0 {
+		return ""
+	}
+	if sp.End.Pos == -1 && sp.Beg.Pos == 0 {
+		return s
+	}
+	if sp.End.Pos > len(s) {
+		panic(fmt.Sprintf("Span: END %d > LEN %d",
+			sp.End.Pos, len(s)))
+	}
+	if sp.Beg.Pos > sp.End.Pos {
+		panic(fmt.Sprintf("Span: BEG %d > END %d",
+			sp.Beg.Pos, sp.End.Pos))
+	}
+	return s[sp.Beg.Pos:sp.End.Pos]
+}
+
+func (sp Span) Info() string {
+	return fmt.Sprintf("%s[%d:%d]", sp.TagName, sp.Beg.Pos, sp.End.Pos)
+}
+
+func (sp Span) Echo() string {
+	return sp.Echo()
+}
+
+func (sp Span) Debug() string {
+	return fmt.Sprintf("<%s>[%s:%s]",
+		sp.TagName, sp.Beg.Debug(), sp.End.Debug())
 }

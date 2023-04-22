@@ -9,6 +9,10 @@ type TypedRaw struct {
 	SU.MarkupType
 }
 
+func (s Raw) S() string {
+	return string(s)
+}
+
 func (p *TypedRaw) S() string {
 	return string(p.Raw)
 }
