@@ -209,14 +209,14 @@ func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 			ctkn.ControlStrings = make([]string, 1)
 			ctkn.ControlStrings[0] = string0
 			ctkn.Text = tmp
-			fmt.Printf("newCtkn: %s: %s||%s \n",
+			fmt.Printf("newCtkn L212 (!Drctv): %s: %s||%s \n",
 				ctkn.TDType, string0, tmp)
 		} else {
 			ctkn.ControlStrings = make([]string, 2)
 			ctkn.ControlStrings[0] = string0
 			ctkn.ControlStrings[1], ctkn.Text =
 				SU.SplitOffFirstWord(tmp)
-			fmt.Printf("newCtkn: %s: %s||%s \n",
+			fmt.Printf("newCtkn L219 Drctv: %s: %s||%s \n",
 				ctkn.TDType, string0,
 				ctkn.ControlStrings[1], tmp)
 		}
