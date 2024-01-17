@@ -116,10 +116,11 @@ type GToken struct {
 }
 */
 
-// NewCTokenFromXmlToken returns a single token tyoe that
-// replaces the unwieldy multi-typed mess of the standard
-// library. It returns a pointer so that nil can indicate
-// an ignorable, skippable token, like all-whitespace.
+// NewCTokenFromXmlToken returns a single token type that replaces
+// the unwieldy multi-typed mess of the standard library.
+//
+// It returns a nil ptr for an ignorable, skippable token, like
+// all-whitespace.
 // .
 func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 	ctkn := new(CToken)
