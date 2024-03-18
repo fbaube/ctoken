@@ -24,3 +24,14 @@ func (p *TypedRaw) S() string {
 func (p *TypedRaw) RawType() SU.MarkupType {
 	return p.MarkupType
 }
+
+// IsDirlike is like IsDir() but more general. Dirlike 
+// is shorthand for "cannot (is not allowed to!) have 
+// own content", but it can be defined as "is/has link(s) 
+// to other stuff" - i.e. a directory or a symbolic link.
+// In this context (i.e. when embedded in TypedRaw), it
+// means SU.MU_type_DIRLIKE
+// .
+func (p *TypedRaw) IsDirlike() bool {
+     return p.MarkupType == SU.MU_type_DIRLIKE
+}
