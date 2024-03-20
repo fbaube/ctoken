@@ -216,7 +216,7 @@ func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 			ctkn.ControlStrings[0] = string0
 			ctkn.ControlStrings[1], ctkn.Text =
 				SU.SplitOffFirstWord(tmp)
-			fmt.Printf("newCtkn L219 Drctv: %s: %s||%s||%s \n",
+			L.L.Okay("NewCtkn.L219: Drctv: %s: %s||%s||%s",
 				ctkn.TDType, string0,
 				ctkn.ControlStrings[1], tmp)
 		}
