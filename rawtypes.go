@@ -4,7 +4,8 @@ import SU "github.com/fbaube/stringutils"
 
 type Raw string
 
-// TypedRaw can also have [MarkupType] set to [MU_type_DIRLIKE].
+// TypedRaw includes [stringutils.MarkupType] 
+// and can have it set to [MU_type_DIRLIKE].
 type TypedRaw struct {
 	Raw
 	SU.MarkupType

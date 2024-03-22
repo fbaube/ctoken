@@ -11,6 +11,7 @@ import (
 
 // CToken is the lowest common denominator of tokens parsed
 // from XML mixed content and other content-oriented markup.
+// It has [stringutils.MarkupType].
 //
 // CToken:
 //   - Common Token
@@ -66,7 +67,7 @@ type CToken struct {
 	// calling [xml.CopyToken].
 	SourceToken interface{}
 	// MarkupType of the original token; the value is
-	// one of MU_type_(XML/HTML/MKDN/BIN/SQL/Dirlike). 
+	// one of MU_type_(XML/HTML/MKDN/BIN/SQL/DIRLIKE). 
 	// It is particularly helpful to have this info at the
 	// token level when we consider that for example, we can
 	// embed HTML tags in Markdown. Note that in the future,
