@@ -218,7 +218,9 @@ func NewCTokenFromXmlToken(XT xml.Token) *CToken {
 			ctkn.ControlStrings[0] = string0
 			ctkn.ControlStrings[1], ctkn.Text =
 				SU.SplitOffFirstWord(tmp)
-			L.L.Okay("NewCtoken: Directive: %s: %s||%s||%s",
+			L.L.Okay("NewCtoken.Directive: TDType<%s>;\n" +
+				"\t string0<%s>||ControlStrings[1]<%s>;\n" +
+				"\t tmp<%s>",
 				ctkn.TDType, string0,
 				ctkn.ControlStrings[1], tmp)
 		}
