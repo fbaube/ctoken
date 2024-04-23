@@ -1,5 +1,9 @@
 package ctoken
 
+// This should file should be named
+// typedraw.go not rawtyped.go but
+// that gets redd wrong, as "type draw".
+
 import SU "github.com/fbaube/stringutils"
 
 type Raw string
@@ -8,7 +12,9 @@ type Raw string
 // and can have it set to [MU_type_DIRLIKE].
 type TypedRaw struct {
 	Raw
-	SU.MarkupType
+	// We have to rename this field so that 
+	// we don't confuse the compiler too much.
+	RawMT SU.MarkupType
 }
 
 func (s Raw) S() string {
@@ -24,10 +30,10 @@ func (p *TypedRaw) S() string {
 // elements of [TypedRaw] can be unexported.
 // .
 func (p *TypedRaw) RawType() SU.MarkupType {
-	return p.MarkupType
+	return p.RawMT
 }
 
-// IsDirlike is like IsDir() but more general. Dirlike 
+// IsDirlike is IsDir()-like but more general. Dirlike 
 // is shorthand for "cannot (is not allowed to!) have 
 // own content", but it can be defined as "is/has link(s) 
 // to other stuff" - i.e. a directory or a symbolic link.
@@ -35,5 +41,5 @@ func (p *TypedRaw) RawType() SU.MarkupType {
 // means SU.MU_type_DIRLIKE
 // .
 func (p *TypedRaw) IsDirlike() bool {
-     return p.MarkupType == SU.MU_type_DIRLIKE
+     return p.RawMT == SU.MU_type_DIRLIKE
 }
