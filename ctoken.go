@@ -66,13 +66,14 @@ type CToken struct {
 	// so every Token has to be cloned, by
 	// calling [xml.CopyToken].
 	SourceToken interface{}
-	// MarkupType of the original token; the value is
+	// Raw_type of the original token; the value is
 	// one of MU_type_(XML/HTML/MKDN/BIN/SQL/DIRLIKE). 
-	// It is particularly helpful to have this info at the
-	// token level when we consider that for example, we can
-	// embed HTML tags in Markdown. Note that in the future,
-	// each value could actually be a namespace declaration.
-	SU.MarkupType
+	// It is particularly helpful to have this info at 
+	// the token level when we consider that for example, 
+	// we can embed HTML tags in Markdown. Note that in 
+	// the future, each value could actually be the
+	// appropriate namespace declaration.
+	SU.Raw_type
 	// FilePosition is char position, and line nr & column nr.
 	FilePosition
 

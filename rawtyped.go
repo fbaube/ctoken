@@ -8,13 +8,11 @@ import SU "github.com/fbaube/stringutils"
 
 type Raw string
 
-// TypedRaw includes [stringutils.MarkupType] 
-// and can have it set to [MU_type_DIRLIKE].
+// TypedRaw includes [stringutils.Raw_type] 
+// and can have it set to [Raw_type_DIRLIKE].
 type TypedRaw struct {
 	Raw
-	// We have to rename this field so that 
-	// we don't confuse the compiler too much.
-	RawMT SU.MarkupType
+	SU.Raw_type
 }
 
 func (s Raw) S() string {
@@ -25,13 +23,15 @@ func (p *TypedRaw) S() string {
 	return string(p.Raw)
 }
 
+/*
 // RawType is a convenience function so that
 // if (i.e. when) it becomes convenient, the
 // elements of [TypedRaw] can be unexported.
 // .
-func (p *TypedRaw) RawType() SU.MarkupType {
-	return p.RawMT
+func (p *TypedRaw) RawType() SU.Raw_type {
+	return p.Raw_type
 }
+*/
 
 // IsDirlike is IsDir()-like but more general. Dirlike 
 // is shorthand for "cannot (is not allowed to!) have 
@@ -41,5 +41,5 @@ func (p *TypedRaw) RawType() SU.MarkupType {
 // means SU.MU_type_DIRLIKE
 // .
 func (p *TypedRaw) IsDirlike() bool {
-     return p.RawMT == SU.MU_type_DIRLIKE
+     return p.Raw_type == SU.Raw_type_DIRLIKE
 }
