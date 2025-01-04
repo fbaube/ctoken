@@ -9,10 +9,13 @@ import SU "github.com/fbaube/stringutils"
 type Raw string
 
 // TypedRaw includes [stringutils.Raw_type] 
-// and can have it set to [Raw_type_DIRLIKE].
+// and, for convenience in coding, can even
+// have it set to [Raw_type_DIRLIKE].
 type TypedRaw struct {
 	Raw
 	SU.Raw_type
+	// Hash is for content change detection using md5
+        Hash [16]byte
 }
 
 func (s Raw) S() string {
