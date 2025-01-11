@@ -10,8 +10,9 @@ import (
 )
 
 // CToken is the lowest common denominator of tokens parsed
-// from XML mixed content and other content-oriented markup.
-// It has [stringutils.MarkupType].
+// from XML mixed content and other content-oriented markup
+// (incl. HDITA and MDITA). It has [stringutils.Raw_Type]
+// (XML, HTML, MKDN, DIRLIKE, ...). 
 //
 // CToken:
 //   - Common Token
@@ -25,8 +26,8 @@ import (
 // is considered in isolation, as-is, without the context of
 // surrounding markup. It should record/reflect/reproduce any
 // XML (or HTML) token faithfully, and also accommodate any
-// token from Markdown or (in the future) related markup
-// such as Docbook or Asciidoc or RST (restructured text).
+// token from Markdown or (in the future) related markup such
+// as Typst or Docbook or Asciidoc or RST (restructured text).
 //
 // The use of an XML-like data structure as the lingua franca
 // is also meant to make XML-style automated processing simpler.

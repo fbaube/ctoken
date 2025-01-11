@@ -11,11 +11,11 @@ require (
 
 require (
 	github.com/fatih/color v1.18.0 // indirect
-	github.com/fbaube/dsmnd v0.0.0-20241113194348-8bcb3be2decd // indirect
+	github.com/fbaube/dsmnd v0.0.0-20250111125333-2b80f885bfc2 // indirect
 	github.com/fbaube/humanbytes v0.0.0-20240227103335-a0b11501ad0e // indirect
 	github.com/fbaube/logutils v0.0.0-20240425064504-eb572963f0fc // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
