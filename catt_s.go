@@ -4,13 +4,12 @@ package ctoken
 
 import (
 	"encoding/xml"
-	_ "github.com/fbaube/stringutils"
+	SU "github.com/fbaube/stringutils"
 )
 
 // Alias the standard library's XML type
 // (for simplicity and convenience) to
-//   - attach methods to it (e.g. interface
-//     [stringutils.Stringser]), and
+//   - attach methods to it (e.g. interface [SU.Stringser]), and
 //   - use it for other markups too (like Markdown)
 //
 // type xml.Attr struct { Name xml.Name; Value string }
@@ -25,7 +24,7 @@ func (A CAtt) Echo() string {
 func (AL CAtts) Echo() string {
 	var s string
 	for _, A := range AL {
-		s += " " + CName(A.Name).Echo() + "=\"" + A.Value + "\""
+		s += " " + CName(A.Name).Echo() + "=\"" + A.Value + SU.Trim("\"")
 	}
 	return s
 }

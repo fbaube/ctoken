@@ -49,7 +49,7 @@ import (
 // must also be adaptable for Markdown. For example, when
 // Pandoc-style attributes are used.
 //
-// CToken implements interface [stringutils.Stringser].
+// CToken implements interface [SU.Stringser].
 // .
 type CToken struct {
 	// ==================================

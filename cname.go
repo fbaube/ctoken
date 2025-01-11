@@ -2,14 +2,13 @@ package ctoken
 
 import (
 	"encoding/xml"
-	_ "github.com/fbaube/stringutils"
+	SU "github.com/fbaube/stringutils"
 	S "strings"
 )
 
 // Alias the standard library's XML type
 // (for simplicity and convenience) to
-//   - attach methods to it (e.g. interface
-//     [stringutils.Stringser]), and
+//   - attach methods to it (e.g. interface [SU.Stringser]), and
 //   - use it for other markups too (like Markdown)
 type CName xml.Name
 
@@ -23,7 +22,7 @@ func (p1 *CName) Equals(p2 *CName) bool {
 
 func (p *CName) FixNS() {
 	if p.Space != "" && !S.HasSuffix(p.Space, ":") {
-		p.Space = p.Space + ":"
+		p.Space = p.Space + SU.Trim(":")
 	}
 }
 

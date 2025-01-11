@@ -3,13 +3,13 @@ package ctoken
 import (
 	"encoding/xml"
 	"fmt"
-	_ "github.com/fbaube/stringutils"
+	SU "github.com/fbaube/stringutils"
 )
 
 // FilePosition is a char.position (e.g. from xml.Decoder)
 // plus line nr & column nr (when they can be calculated).
 //
-// FilePosition implements interface [stringutils.Stringser].
+// FilePosition implements interface [SU.Stringser].
 // .
 type FilePosition struct {
 	// Pos is the byte position in file,
@@ -35,7 +35,8 @@ func (fp FilePosition) Info() string {
 }
 
 func (fp FilePosition) Echo() string {
-	return fp.Info()
+     	// A Bogus call to let us include SU
+	return SU.Trim(fp.Info())
 }
 
 func (fp FilePosition) Debug() string {
@@ -52,7 +53,7 @@ type FileRange struct {
 
 // Span specifies the range of a subset of a string (that is not included in the struct).
 //
-// Span implements interface [stringutils.Stringser].
+// Span implements interface [SU.Stringser].
 //
 // FIXME:  Make this a ptr to a ContentityNode
 // .
