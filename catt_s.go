@@ -9,7 +9,10 @@ import (
 
 // Alias the standard library's XML type
 // (for simplicity and convenience) to
-//   - attach methods to it (e.g. interface [SU.Stringser]), and
+//   - attach methods to it (e.g. interface
+//     [github.com/fbaube/stringutils.Stringser]), and
+//     [stringutils.Stringser]), and
+//     [SU.Stringser]), and
 //   - use it for other markups too (like Markdown)
 //
 // type xml.Attr struct { Name xml.Name; Value string }
