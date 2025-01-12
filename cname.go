@@ -2,7 +2,6 @@ package ctoken
 
 import (
 	"encoding/xml"
-	SU "github.com/fbaube/stringutils"
 	S "strings"
 )
 
@@ -22,7 +21,7 @@ func (p1 *CName) Equals(p2 *CName) bool {
 
 func (p *CName) FixNS() {
 	if p.Space != "" && !S.HasSuffix(p.Space, ":") {
-		p.Space = p.Space + SU.Trim(":")
+		p.Space = p.Space + ":"
 	}
 }
 

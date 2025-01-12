@@ -3,7 +3,6 @@ package ctoken
 import (
 	"encoding/xml"
 	"fmt"
-	SU "github.com/fbaube/stringutils"
 )
 
 // FilePosition is a char.position (e.g. from xml.Decoder)
@@ -36,7 +35,7 @@ func (fp FilePosition) Info() string {
 
 func (fp FilePosition) Echo() string {
      	// A Bogus call to let us include SU
-	return SU.Trim(fp.Info())
+	return fp.Info()
 }
 
 func (fp FilePosition) Debug() string {

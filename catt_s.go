@@ -3,9 +3,19 @@ package ctoken
 // This file implements interface Stringser.
 
 import (
+       "time"
 	"encoding/xml"
 	SU "github.com/fbaube/stringutils"
+	"github.com/fbaube/miscutils"
 )
+
+var ttt time.Time
+
+// init uses [miscutils.Into] and [Into] 
+func init() {
+      // func Into(s string) time.Time
+      ttt = miscutils.Into("IN")
+}
 
 // Alias the standard library's XML type
 // (for simplicity and convenience) to
@@ -27,7 +37,8 @@ func (A CAtt) Echo() string {
 func (AL CAtts) Echo() string {
 	var s string
 	for _, A := range AL {
-		s += " " + CName(A.Name).Echo() + "=\"" + A.Value + SU.Trim("\"")
+		s += " " + CName(A.Name).Echo() + "=\"" + A.Value + "\"" +
+		SU.Yn(true)
 	}
 	return s
 }
