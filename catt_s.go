@@ -16,7 +16,8 @@ import (
 
 var ttt time.Time
 
-// Derf uses [miscutils.Into] and [Into] 
+// Derf uses [miscutils.Into] and [Into]. Also SU's 
+// [stringutils.NowAsYMDHM] and [github.com/fbaube/stringutils.NowAsYMDHM]
 func Derf() {
       // func Into(s string) time.Time
       ttt = miscutils.Into("IN")
