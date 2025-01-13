@@ -11,8 +11,8 @@ import (
 
 var ttt time.Time
 
-// init uses [miscutils.Into] and [Into] 
-func init() {
+// Derf uses [miscutils.Into] and [Into] 
+func Derf() {
       // func Into(s string) time.Time
       ttt = miscutils.Into("IN")
 }
