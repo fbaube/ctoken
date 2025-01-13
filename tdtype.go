@@ -9,6 +9,7 @@ import _ "encoding/xml" // For documentation
 // .
 type TDType string
 
+// A comment for these constants!
 const (
 	TD_type_ERROR TDType = "ERR" // ERROR
 
