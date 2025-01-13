@@ -2,6 +2,11 @@ package ctoken
 
 // This file implements interface Stringser.
 
+// If an import IS aliased, a docref needs
+// the full path including "github.com/" .
+// If an import is NOT aliased, a docref needs
+// just the last (base) section of the path.
+
 import (
        "time"
 	"encoding/xml"
