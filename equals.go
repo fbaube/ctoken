@@ -1,6 +1,6 @@
 package ctoken
 
-// import "encoding/xml"
+// import "github.com/nbio/xml"
 
 // Structure details of `xml.Name`:
 //   type Name struct { Space, Local string }//

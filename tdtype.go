@@ -1,6 +1,6 @@
 package ctoken
 
-import _ "encoding/xml" // For documentation
+import _ "github.com/nbio/xml" // For documentation
 
 // TDType specifies the type of a markup tag (assumed to be
 // XML) or an XML directive. Values are based on the tokens

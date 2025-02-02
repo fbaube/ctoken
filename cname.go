@@ -1,7 +1,7 @@
 package ctoken
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	S "strings"
 )
 

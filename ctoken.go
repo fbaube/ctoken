@@ -1,7 +1,7 @@
 package ctoken
 
 import (
-	"encoding/xml"
+	"github.com/nbio/xml"
 	"fmt"
 	SU "github.com/fbaube/stringutils"
 	// XU "github.com/fbaube/xmlutils"

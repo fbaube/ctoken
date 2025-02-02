@@ -9,7 +9,7 @@ package ctoken
 
 import (
        "time"
-	"encoding/xml"
+	"github.com/nbio/xml"
 	SU "github.com/fbaube/stringutils"
 	"github.com/fbaube/miscutils"
 )

@@ -1,6 +1,6 @@
 package ctoken
 
-import "encoding/xml"
+import "github.com/nbio/xml"
 
 // GetFirstCTokenByTag checks a start-element's tag's local
 // name only, not any namespace. If no match, it returns nil.
